@@ -1,5 +1,0 @@
-SELECT ROW_NUMBER() OVER (ORDER BY BILL_MST_ID DESC) AS SL
-.
-.
-.
-order by BILL_MST_ID desc
