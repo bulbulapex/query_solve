@@ -13,9 +13,11 @@ connect by level <= regexp_count(CAT_LICENCE, ':') + 1;
 
 
 /*1:2:3 ey value gulake , row akare vag kore data return kore then listagg diye abar 1 ta row te value dekhano holo*/
+/*OUTPUT = V_CAT_LICENCE_NAME VARIABLE A EYVABE VALUE THAKBE 'Civil, Mechanical, Others'*/
 SELECT LISTAGG(CL_NAME_ENG,', ') INTO V_CAT_LICENCE_NAME
       FROM CAT_LICENCE
       WHERE CL_ID IN (
           select * from table(apex_string.split(V_CAT_LICENCE,':'))
 
       )
+
